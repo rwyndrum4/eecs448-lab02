@@ -47,11 +47,6 @@ bool LinkedList<T>::search(T value) const
 		temp = temp->getNext();
 
 }
-	}
-	/** TODO
-		Fix this method
-	*/
-
 	return(isFound);
 }
 
