@@ -106,7 +106,7 @@ bool LinkedList<T>::removeBack()
 	Node<T>* temp = m_front;
 	bool isRemoved = false;
 
-	if(isEmpty() == 1)
+	if(m_front == nullptr)
 	{
 		isRemoved = false;
 	}
@@ -117,11 +117,12 @@ bool LinkedList<T>::removeBack()
 	}
 	else
 	{
-		while(temp->getNext() != nullptr)
+		while(temp->getNext()->getNext() != nullptr)
 		{
 			temp = temp->getNext();
 		}
-		delete temp;
+		delete(temp->getNext());
+		temp->setNext(nullptr);
 		isRemoved = true;
 	}
 
